@@ -1,0 +1,66 @@
+<h2><strong>Moments</strong></h2>
+
+<table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="sr no">
+        <th mat-header-cell *matHeaderCellDef> Sr No. </th>
+        <td mat-cell *matCellDef="let element;let i = index"> {{i + 1}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="documents">
+        <th mat-header-cell *matHeaderCellDef> Documents </th>
+        <td mat-cell *matCellDef="let element">
+            <div class="d-flex align-items-center">
+                <div class="custom-icon d-flex align-items-center" *ngFor="let doc of element.documents">
+                    <div class="d-flex align-items-center">
+                        <img src="../../../assets/images/doc.svg" width="20" height="20" />
+                    </div>
+                </div>
+            </div>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tags">
+        <th mat-header-cell *matHeaderCellDef> Tags </th>
+        <td mat-cell *matCellDef="let element">
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip *ngFor="let tag of element.tags; let i=index" removable="true"
+                    (removed)="removeTag(element, i)">
+                    {{tag}}
+                    <button matChipRemove>
+                        <mat-icon class="tag-color">disabled_by_default</mat-icon>
+                    </button>
+                </mat-chip>
+            </mat-chip-list>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+            <div class="w-100 d-flex align-items-center">
+                <button mat-icon-button>
+                    <mat-icon class="material-icons-outlined">edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="deleteMoment(element)">
+                    <mat-icon class="material-icons-outlined">delete</mat-icon>
+                </button>
+            </div>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [length]="dataSource.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+</mat-paginator>
+
+<ngx-spinner>
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

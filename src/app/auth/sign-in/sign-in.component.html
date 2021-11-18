@@ -1,0 +1,73 @@
+<section class="bg-blue">
+    <mat-grid-list cols="1" rowHeight="150px">
+        <mat-grid-tile>
+            <img src="../../../assets/images/logo.png" width="105" height="94" />
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-card class="container-card">
+        <div class="row mt-3">
+            <div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
+                <h3 class="title">Sign In</h3>
+                <small class="sub-title">To start using the app</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form [formGroup]="signInForm">
+                    <div class="row mt-4">
+                        <div class="col-md-12 d-flex justify-content-center align-items-center">
+                            <mat-form-field>
+                                <mat-label>Enter Email Id</mat-label>
+                                <input matInput type="email" formControlName="email">
+                                <span matPrefix>
+                                    <mat-icon>email</mat-icon>
+                                    &nbsp;
+                                </span>
+                                <mat-error *ngIf="f['email'].hasError('required')">Email is Required
+                                </mat-error>
+                                <mat-error *ngIf="f['email'].hasError('email')">Please Enter a Valid Email
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-12 d-flex justify-content-center align-items-center">
+                            <mat-form-field>
+                                <mat-label>Enter Password</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                                <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon class="text-secondary">{{hide ? 'visibility_off' : 'visibility'}}
+                                    </mat-icon>
+                                </button>
+                                <span matPrefix>
+                                    <mat-icon>lock</mat-icon>
+                                    &nbsp;
+                                </span>
+                                <mat-error *ngIf="f['password'].hasError('required')">Password is Required
+                                </mat-error>
+                                <mat-error *ngIf="f['password'].hasError('pattern')">Please Enter a Valid Password
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center align-items-center mt-5">
+                        <div class="col-md-2 d-flex flex-column justify-content-center align-items-center">
+                            <button type="submit" mat-raised-button class="bg-blue submit-btn text-white w-70"
+                                (click)="submitData()">Sign In</button>
+
+                            <p class="mt-4">
+                                Not a member? <a class="text-blue" [routerLink]="['/sign-up']"><strong>Sign Up</strong></a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </mat-card>
+</section>
+<ngx-spinner>
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

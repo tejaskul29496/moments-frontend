@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body { 
+    height: 100%;
+    font-family: 'Maven Pro', sans-serif !important;
+}
+body { 
+    margin: 0;
+    font-family: 'Maven Pro', sans-serif !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;600;700&display=swap');
+
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+.bg-blue {
+    background-color: #001B30 !important;
+}
+
+.text-blue {
+    color: #001B30 !important;
+}
+
+// .mat-form-field-flex {
+//     align-items: center !important;
+// }
+
+// .mat-form-field-infix {
+//     padding-bottom: 0 !important;
+//     padding-top: 0 !important;
+//     border: 0 !important;
+//     line-height: 1.75 !important;
+//     font-size: 15px !important;
+// }
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Maven Pro', sans-serif !important;
+}
+
+mat-panel-title {
+    font-family: 'Maven Pro', sans-serif !important;
+}
+
+.custom-drop-icon {
+    .mat-expansion-indicator {
+        display: flex;
+        align-items: center;
+        &::after {
+            color: white !important;
+        }
+    }
+}
+
+.custom-panel {
+    .mat-expansion-panel {
+        box-shadow: none !important;
+    }
+}
+
+.custom-panel-header {
+    &.mat-expansion-panel-header {
+        padding: 0 15px;
+    }
+}
+
+
+.profile-btn {
+    .mat-mini-fab {
+        .mat-button-wrapper {
+            padding: 0 !important;
+        }
+    }
+}
+
+mat-drawer {
+    height: 100vh !important;
+}
+
+mat-chip {
+    background: white !important;
+    border: 1px solid #24BE8B !important;
+}
+
+.mat-chip-remove {
+    opacity: 1 !important;
+}
+
+.tag-color {
+    color: #013136 !important;
+}

@@ -1,0 +1,39 @@
+
+.main {
+    border-radius: 37px 0px 0px 0px;
+}
+
+.title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 37px;
+    color: #001B30;
+}
+
+.sub-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #001B30;
+}
+
+.container-card {
+    box-shadow: none;
+    border-radius: 37px 0 0 0;
+}
+
+.custom-label {
+    position: absolute;
+    bottom: 36px;
+    left: -31px;
+}
+
+.submit-btn {
+    border-radius: 25px;
+}
+
+.w-70 {
+    width: 70% !important;
+}
